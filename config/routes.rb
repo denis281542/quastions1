@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :answers
   resources :posts
   get 'persons/profile'
   devise_for :users
