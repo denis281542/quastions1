@@ -19,4 +19,15 @@
 
 <br>
 
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @post, @post.answers.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Задать вопрос', new_post_path %>
