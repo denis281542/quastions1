@@ -13,21 +13,24 @@
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <td>
+        <h2>Дать ответ:</h2>
+          <%= form_with(model: @answer, local: true) do |form| %>
+              <%= form.label :body %><br>
+              <%= form.text_area :body %>
+            </p>
+            <p>
+              <%= form.submit %>
+            </p>
+          <% end %>
+        </td>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<h2>Add a comment:</h2>
-<%= form_with(model: [ @post, @post.answers.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+
+  
 
 <%= link_to 'Задать вопрос', new_post_path %>
