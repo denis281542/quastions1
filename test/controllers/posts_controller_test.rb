@@ -30,7 +30,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get edit" do
     get edit_post_url(@post)
-    assert_response :succes
+    assert_response :success
   end
 
   test "should update post" do
